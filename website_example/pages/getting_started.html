@@ -1,0 +1,297 @@
+<!-- Getting started (Yenten). Two language blocks; the one matching the site language is shown. -->
+
+<div class="gs" data-gs="en">
+    <div class="row"><div class="col-sm-12"><div class="gsGenerator"></div></div></div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Connection details</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <div class="stats">
+                    <div><i class="fa fa-cloud"></i> Pool address: <span class="gsHost"></span></div>
+                    <div><i class="fa fa-cubes"></i> Algorithm: <code>yespower-r16</code> (yespower 1.0, N=4096 r=16), CPU</div>
+                    <div><i class="fa fa-lock"></i> Difficulty adjusts to your hashrate (vardiff)</div>
+                </div>
+            </div>
+
+            <h4 class="push-up-15">Username</h4>
+            <div class="card padding-l-10 padding-r-10">
+                <div class="stats">
+                    <div><i class="fa fa-key"></i> Your <strong>Yenten address</strong> (<code>Y…</code>, 34 characters). In the Yenten wallet: Receive.</div>
+                    <div><i class="fa fa-server"></i> Optional worker name: <code>address+rig1</code></div>
+                    <div><i class="fa fa-info-circle"></i> Ordinary addresses starting with <code>Y</code> (or script addresses starting with <code>7</code>) are accepted.</div>
+                </div>
+            </div>
+
+            <h4 class="push-up-15">Password</h4>
+            <div class="card padding-l-10 padding-r-10">
+                <div class="stats">
+                    <div><i class="fa fa-key"></i> Anything, for example <code>x</code></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <h3>Mining ports</h3>
+            <div class="card">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr><th>Port</th><th>Description</th></tr>
+                        </thead>
+                        <tbody class="gsPortsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row push-up-15">
+        <div class="col-sm-12">
+            <h3 class="push-up-15">About the algorithm (yespower)</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <p>Yenten mines with <strong>yespower 1.0</strong> (N=4096, r=16): a memory-hard CPU algorithm that needs 8 MB per thread, over the <strong>80-byte block header</strong>. The pool speaks the standard Bitcoin Stratum protocol. Block time is 2 minutes; the reward is 50 YTN, halved every 800 000 blocks; the whole coinbase goes to miners (no masternodes).</p>
+                <ul>
+                    <li>Use <strong>poolpayminer</strong> (below): it knows <code>yespower-r16</code> and speaks this pool's protocol. Other yespower miners (cpuminer-opt with <code>-a yespowerr16</code>) work too.</li>
+                    <li>yespower is a CPU algorithm: every thread needs 8 MB of memory (L3 cache helps); any modern CPU works.</li>
+                </ul>
+            </div>
+
+            <h3 class="push-up-15">Software</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <ul>
+                    <li><strong>poolpayminer (Windows x64 and Linux x86-64):</strong> <a href="/downloads/">downloads</a>,
+                        <a href="https://github.com/newsmoneymaker/poolpayminer" target="_blank" rel="noopener">source code</a>. A modified XMRig with yespower (<code>yespower-r16</code>) and TLS support.
+                        <strong>Fee 1%</strong> (1 minute in about 100), shown at start-up; details on the download page.</li>
+                    <li><strong>Wallet</strong> (to get your address): Yenten Core from the project (<a href="https://github.com/yentencoin/yenten/releases" target="_blank" rel="noopener">releases</a>).</li>
+                </ul>
+            </div>
+
+            <h3 class="push-up-15">Rewards and payments</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <ul>
+                    <li>Reward scheme: proportional with time weighting (older shares of a round weigh less).</li>
+                    <li>Block rewards become spendable after <strong>100 blocks</strong> (about 3.5 hours); the pool credits your balance after that.</li>
+                    <li>Payments are ordinary YTN transactions to your address. Everyone who is due is paid in one transaction per round, the network fee is shared by the paid miners.</li>
+                    <li>Modes: <code>prop:ADDRESS</code> (shared reward, default) or <code>solo:ADDRESS</code> (the block finder takes the reward).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="gs" data-gs="ru">
+    <div class="row"><div class="col-sm-12"><div class="gsGenerator"></div></div></div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Параметры подключения</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <div class="stats">
+                    <div><i class="fa fa-cloud"></i> Адрес пула: <span class="gsHost"></span></div>
+                    <div><i class="fa fa-cubes"></i> Алгоритм: <code>yespower-r16</code> (yespower 1.0, N=4096 r=16), процессор</div>
+                    <div><i class="fa fa-lock"></i> Сложность подстраивается под ваш хешрейт (vardiff)</div>
+                </div>
+            </div>
+
+            <h4 class="push-up-15">Логин</h4>
+            <div class="card padding-l-10 padding-r-10">
+                <div class="stats">
+                    <div><i class="fa fa-key"></i> Ваш <strong>адрес Yenten</strong> (<code>Y…</code>, 34 символа). В кошельке Yenten: Receive.</div>
+                    <div><i class="fa fa-server"></i> Имя воркера по желанию: <code>адрес+rig1</code></div>
+                    <div><i class="fa fa-info-circle"></i> Принимаются обычные адреса, начинающиеся с <code>F</code> (и адреса скриптов, начинающиеся с <code>7</code>).</div>
+                </div>
+            </div>
+
+            <h4 class="push-up-15">Пароль</h4>
+            <div class="card padding-l-10 padding-r-10">
+                <div class="stats">
+                    <div><i class="fa fa-key"></i> Любой, например <code>x</code></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <h3>Порты для майнинга</h3>
+            <div class="card">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <tr><th>Порт</th><th>Описание</th></tr>
+                        </thead>
+                        <tbody class="gsPortsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row push-up-15">
+        <div class="col-sm-12">
+            <h3 class="push-up-15">Об алгоритме (yespower)</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <p>Yenten майнится <strong>yespower 1.0</strong> (N=4096, r=16): процессорный алгоритм, требующий 8 МБ памяти на поток, над <strong>80-байтным заголовком блока</strong>. Пул работает по стандартному протоколу Bitcoin Stratum. Время блока 2 минуты; награда 50 YTN, делится пополам каждые 800 000 блоков; весь coinbase достаётся майнерам (мастернод нет).</p>
+                <ul>
+                    <li>Используйте <strong>poolpayminer</strong> (ниже): он знает <code>yespower-r16</code> и работает по протоколу этого пула. Подойдут и другие майнеры yespower (cpuminer-opt, <code>-a yespowerr16</code>).</li>
+                    <li>yespower это процессорный алгоритм: каждому потоку нужно 8 МБ памяти (помогает кеш L3); хватит любого современного процессора.</li>
+                </ul>
+            </div>
+
+            <h3 class="push-up-15">Программы</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <ul>
+                    <li><strong>poolpayminer (Windows x64 и Linux x86-64):</strong> <a href="/downloads/">загрузки</a>,
+                        <a href="https://github.com/newsmoneymaker/poolpayminer" target="_blank" rel="noopener">исходный код</a>. Изменённый XMRig с yespower (<code>yespower-r16</code>) и поддержкой TLS.
+                        <strong>Комиссия 1%</strong> (1 минута из примерно 100), показывается при запуске; подробности на странице загрузок.</li>
+                    <li><strong>Кошелёк</strong> (чтобы получить адрес): Yenten Core от проекта (<a href="https://github.com/yentencoin/yenten/releases" target="_blank" rel="noopener">релизы</a>).</li>
+                </ul>
+            </div>
+
+            <h3 class="push-up-15">Награды и выплаты</h3>
+            <div class="card padding-l-10 padding-r-10">
+                <ul>
+                    <li>Схема наград: пропорциональная с учётом времени (старые шары раунда весят меньше).</li>
+                    <li>Награда за блок становится доступной через <strong>100 блоков</strong> (около 3,5 часов); после этого пул зачисляет её на ваш баланс.</li>
+                    <li>Выплаты это обычные транзакции YTN на ваш адрес. Все, кому пора платить, получают деньги одной транзакцией за раунд, комиссию сети делят между собой получатели.</li>
+                    <li>Режимы: <code>prop:АДРЕС</code> (общая награда, по умолчанию) или <code>solo:АДРЕС</code> (награду забирает нашедший блок).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// ---------------------------------------------------------------------------------------------------------------
+// Config generator: address (+ optional deposit note, worker name) -> ready-to-use miner settings
+// ---------------------------------------------------------------------------------------------------------------
+var GS_POOLPAYMINER = true;      // false hides the poolpayminer variants (e.g. until the miner is published)
+
+var gsText = {
+    en: {
+        title: 'Config generator',
+        intro: 'Enter your address and get ready-made settings. Nothing is sent anywhere: the text is built in your browser. <a href="/downloads/">Download poolpayminer</a>.',
+        address: 'Your Yenten address', addressHint: '34 characters, starts with "Y"; in the Yenten wallet: Receive',
+        worker: 'Worker name', tls: 'Encrypted connection (TLS), recommended', miner: 'Miner',
+        mPpm: 'poolpayminer, config.json', mCli: 'poolpayminer, command line',
+        copy: 'Copy', copied: 'Copied', result: 'Result',
+        errAddress: 'The address must be a Yenten address: "Y…", 34 characters.',
+        errWorker: 'The worker name may contain letters, digits, "-" and "_" (up to 32).',
+        fileHint: 'Save as config.json next to poolpayminer.exe', cliHint: 'Run in a command prompt'
+    },
+    ru: {
+        title: 'Генератор конфига',
+        intro: 'Введите свой адрес и получите готовые настройки. Ничего никуда не отправляется: текст собирается в вашем браузере. <a href="/downloads/">Скачать poolpayminer</a>.',
+        address: 'Ваш адрес Yenten', addressHint: '34 символа, начинается с "Y"; в кошельке Yenten: Receive',
+        worker: 'Имя воркера', tls: 'Шифрованное соединение (TLS), рекомендуется', miner: 'Майнер',
+        mPpm: 'poolpayminer, config.json', mCli: 'poolpayminer, командная строка',
+        copy: 'Копировать', copied: 'Скопировано', result: 'Результат',
+        errAddress: 'Нужен адрес Yenten: "Y…", 34 символа.',
+        errWorker: 'Имя воркера: буквы, цифры, "-" и "_" (до 32 символов).',
+        fileHint: 'Сохраните как config.json рядом с poolpayminer.exe', cliHint: 'Запустите в командной строке'
+    }
+};
+
+function gsEsc(t) { return $('<div>').text(t).html(); }
+
+function gsInit(lang) {
+    var t = gsText[lang];
+    var box = $('.gs[data-gs="' + lang + '"] .gsGenerator');
+    if (!box.length) return;
+    var opts = '<option value="ppm">' + t.mPpm + '</option><option value="cli">' + t.mCli + '</option>';
+    box.html(
+        '<h3>' + t.title + '</h3><div class="card padding-l-10 padding-r-10"><p>' + t.intro + '</p><div class="row">' +
+        '<div class="col-sm-6"><label>' + t.address + '</label><input type="text" class="form-control gsAddr" spellcheck="false" autocomplete="off" placeholder="Y…">' +
+            '<p class="text-muted"><small>' + t.addressHint + '</small></p></div>' +
+        '<div class="col-sm-3"><label>' + t.worker + '</label><input type="text" class="form-control gsWorker" value="rig1" spellcheck="false" autocomplete="off"></div>' +
+        '<div class="col-sm-3"><label>' + t.miner + '</label><select class="form-control gsMiner">' + opts + '</select></div>' +
+        '</div><div class="row">' +
+        '<div class="col-sm-12"><div class="checkbox"><label><input type="checkbox" class="gsTls" checked> ' + t.tls + '</label></div></div></div>' +
+        '<div class="gsErr text-danger" style="display:none"></div>' +
+        '<h4>' + t.result + ' <small class="gsHint"></small> <button type="button" class="btn btn-default btn-xs gsCopy">' + t.copy + '</button></h4>' +
+        '<pre class="gsOut"></pre></div>'
+    );
+    box.on('input change', 'input, select', function () { gsRender(lang); });
+    box.on('click', '.gsCopy', function () {
+        var text = box.find('.gsOut').text(), btn = $(this);
+        var done = function () { btn.text(t.copied); setTimeout(function () { btn.text(t.copy); }, 1500); };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () {});
+        else { var r = document.createRange(); r.selectNodeContents(box.find('.gsOut')[0]); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); try { document.execCommand('copy'); done(); } catch (e) {} }
+    });
+    gsRender(lang);
+}
+
+function gsRender(lang) {
+    var t = gsText[lang];
+    var box = $('.gs[data-gs="' + lang + '"] .gsGenerator');
+    if (!box.length) return;
+
+    var address = $.trim(box.find('.gsAddr').val());
+    var worker = $.trim(box.find('.gsWorker').val());
+    var tls = box.find('.gsTls').is(':checked');
+    var miner = box.find('.gsMiner').val();
+
+    var errors = [];
+    var valid = /^[Y5][1-9A-HJ-NP-Za-km-z]{33,34}$/.test(address);
+    var shown = address || 'YOUR_YTN_ADDRESS';
+    if (address && !valid) errors.push(t.errAddress);
+    if (worker && !/^[A-Za-z0-9_\-]{1,32}$/.test(worker)) errors.push(t.errWorker);
+
+    var login = shown + (worker ? '+' + worker : '');
+
+    var ports = (typeof lastStats !== 'undefined' && lastStats && lastStats.config && lastStats.config.ports) || [];
+    var port = 0, plain = 0, enc = 0;
+    for (var i = 0; i < ports.length; i++) {
+        if (ports[i].tls) { if (!enc) enc = ports[i].port; } else if (!plain) plain = ports[i].port;
+    }
+    port = (tls ? enc : plain) || (enc || plain || 3900);
+    var useTls = tls ? !!enc : false;
+    var host = (typeof getPoolHost === 'function' && typeof lastStats !== 'undefined' && lastStats) ? getPoolHost() : location.hostname;
+    var url = host + ':' + port;
+
+    var out = '', hint = '';
+    if (miner === 'ppm') {
+        hint = t.fileHint;
+        out = JSON.stringify({
+            autosave: false,
+            cpu: {enabled: true, 'huge-pages': true},
+            pools: [{algo: 'yespower-r16', url: url, user: login, pass: 'x', keepalive: true, tls: useTls}]
+        }, null, 4);
+    } else if (miner === 'cli') {
+        hint = t.cliHint;
+        out = 'poolpayminer.exe -a yespower-r16 ' + (useTls ? '--tls ' : '') + '-o ' + url + ' -u ' + login + ' -p x -k';
+    }
+
+    box.find('.gsOut').text(out);
+    box.find('.gsHint').text(hint);
+    box.find('.gsErr').html(errors.map(gsEsc).join('<br>')).toggle(errors.length > 0);
+}
+
+gsInit('en');
+gsInit('ru');
+
+// Show the block that matches the site language (falls back to English)
+var gsLang = (typeof langCode !== 'undefined' && langCode === 'ru') ? 'ru' : 'en';
+$('.gs').hide().filter('[data-gs="' + gsLang + '"]').show();
+
+// Update current page
+var gsLastPorts = '';
+currentPage = {
+    destroy: function () {
+    },
+    update: function () {
+        var ports = (lastStats && lastStats.config && lastStats.config.ports) || [];
+        var portsJson = JSON.stringify(ports);
+        if (gsLastPorts !== portsJson) {
+            gsLastPorts = portsJson;
+            var rows = '';
+            for (var i = 0; i < ports.length; i++) {
+                rows += '<tr><td>' + $('<div>').text(ports[i].port).html() + '</td><td>' +
+                    $('<div>').text(ports[i].desc || '').html() + '</td></tr>';
+            }
+            $('.gsPortsBody').html(rows);
+            $('.gsPort').text(ports.length ? ports[0].port : '');
+        }
+        $('.gsHost').text(getPoolHost());
+        gsRender('en');
+        gsRender('ru');
+    }
+};
+</script>

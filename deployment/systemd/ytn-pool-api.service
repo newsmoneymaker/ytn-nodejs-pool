@@ -1,0 +1,17 @@
+[Unit]
+Description=Yenten pool: public API (127.0.0.1:8125)
+After=ytn-pool-redis.service ytn-node.service
+Requires=ytn-pool-redis.service
+[Service]
+Type=simple
+User=ytnpool
+WorkingDirectory=/opt/ytn-nodejs-pool
+ExecStart=/usr/bin/node /opt/ytn-nodejs-pool/init.js -module=api
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

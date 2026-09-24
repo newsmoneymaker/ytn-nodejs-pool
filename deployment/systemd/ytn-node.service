@@ -1,0 +1,19 @@
+[Unit]
+Description=Yenten node (yentend): the chain, the block templates and the pool wallet
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ytnpool
+# yenten.conf: server=1, listen=1, rpcuser/rpcpassword, rpcbind=127.0.0.1, rpcport=9982, port=9981, addnode=<peers>, see docs/INSTALL.md
+ExecStart=/opt/ytn/bin/yentend -datadir=/opt/ytn/data -conf=/opt/ytn/data/yenten.conf -printtoconsole
+Restart=on-failure
+RestartSec=30
+LimitNOFILE=65536
+TimeoutStopSec=180
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

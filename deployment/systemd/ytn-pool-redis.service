@@ -1,0 +1,17 @@
+[Unit]
+Description=Redis for the Yenten pool (127.0.0.1:6387, AOF)
+After=network.target
+
+[Service]
+Type=simple
+User=ytnpool
+ExecStart=/usr/bin/redis-server /opt/ytn-nodejs-pool/deployment/redis-pool.conf.example
+Restart=always
+RestartSec=3
+LimitNOFILE=10032
+TimeoutStopSec=60
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

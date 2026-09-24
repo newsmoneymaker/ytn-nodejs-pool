@@ -1,0 +1,82 @@
+<!-- FAQ (Yenten). Two language blocks; the one matching the site language is shown. -->
+
+<div class="faq" data-faq="en">
+    <h3>Frequently Asked Questions (FAQ)</h3>
+
+    <h4 class="push-up-20">What do I use as my wallet address?</h4>
+    <div class="card padding-15 push-down-10">
+        A Yenten <strong>address</strong>: <code>F…</code>, 34 characters. In the Yenten wallet open Receive. Payments are sent to this address.
+    </div>
+
+    <h4 class="push-up-20">Which algorithm do I mine?</h4>
+    <div class="card padding-15 push-down-10">
+        yespower-r16 (<code>-a yespower-r16</code>) on the CPU. Use poolpayminer.
+    </div>
+
+    <h4 class="push-up-20">Can I change my difficulty?</h4>
+    <div class="card padding-15 push-down-10">
+        It adjusts automatically to your hashrate (about one share every 20 seconds). Fixed difficulty is not available.
+    </div>
+
+    <h4 class="push-up-20">How are rewards split?</h4>
+    <div class="card padding-15 push-down-10">
+        Proportionally to your shares in the round, with time weighting: older shares of a round weigh less than newer ones,
+        which protects against pool hopping. Use <code>solo:ADDRESS</code> as your login if you want to take the whole reward
+        for a block you find yourself instead of sharing it.
+    </div>
+
+    <h4 class="push-up-20">When do I get paid?</h4>
+    <div class="card padding-15 push-down-10">
+        A block reward is credited to the balances after <strong>110 confirmations</strong> (a block reward unlocks after 100 blocks, about 3.5 hours). Everyone whose balance
+        is above the minimum payout is paid in one transaction per round; the network fee is shared by the paid miners.
+        The payment appears on the Payments page with a link to the transaction in the block explorer.
+    </div>
+
+    <h4 class="push-up-20">The pool does not accept my address</h4>
+    <div class="card padding-15 push-down-10">
+        It must be a Yenten address starting with <code>Y</code> (34 characters). Copy it from the wallet without spaces.
+    </div>
+</div>
+
+<div class="faq" data-faq="ru">
+    <h3>Часто задаваемые вопросы (FAQ)</h3>
+
+    <h4 class="push-up-20">Какой адрес кошелька указывать?</h4>
+    <div class="card padding-15 push-down-10">
+        <strong>Адрес</strong> Yenten: <code>F…</code>, 34 символа. В кошельке Yenten откройте Receive. Выплаты отправляются на этот адрес.
+    </div>
+
+    <h4 class="push-up-20">Какой алгоритм майнить?</h4>
+    <div class="card padding-15 push-down-10">
+        yespower-r16 (<code>-a yespower-r16</code>) на процессоре. Используйте poolpayminer.
+    </div>
+
+    <h4 class="push-up-20">Можно ли изменить сложность?</h4>
+    <div class="card padding-15 push-down-10">
+        Она подстраивается под ваш хешрейт автоматически (примерно одна шара в 20 секунд). Фиксированной сложности нет.
+    </div>
+
+    <h4 class="push-up-20">Как делятся награды?</h4>
+    <div class="card padding-15 push-down-10">
+        Пропорционально вашим шарам в раунде, с учётом времени: старые шары раунда весят меньше новых, это защищает от переходов
+        майнеров между пулами. Укажите <code>solo:АДРЕС</code> в логине, если хотите забирать всю награду за найденный вами блок, а не делить её.
+    </div>
+
+    <h4 class="push-up-20">Когда придут выплаты?</h4>
+    <div class="card padding-15 push-down-10">
+        Награда за блок зачисляется на балансы после <strong>110 подтверждений</strong> (награда за блок разблокируется через 100 блоков, около 3,5 часов). Все, чей баланс выше минимальной выплаты,
+        получают деньги одной транзакцией за раунд; комиссию сети делят между собой получатели.
+        Выплата появляется на странице Payments со ссылкой на транзакцию в обозревателе.
+    </div>
+
+    <h4 class="push-up-20">Пул не принимает мой адрес</h4>
+    <div class="card padding-15 push-down-10">
+        Нужен адрес Yenten, начинающийся с <code>Y</code> (34 символа). Скопируйте его из кошелька без пробелов.
+    </div>
+</div>
+
+<script>
+var faqLang = (typeof langCode !== 'undefined' && langCode === 'ru') ? 'ru' : 'en';
+$('.faq').hide().filter('[data-faq="' + faqLang + '"]').show();
+currentPage = { destroy: function () {}, update: function () {} };
+</script>
